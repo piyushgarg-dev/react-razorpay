@@ -1,5 +1,7 @@
 # React Razorpay
 
+Integrate Razorpay Payment gateway in your react application.
+
 ## Basic Example
 
 ```js
