@@ -13,7 +13,7 @@ import useRazorpay, { RazorpayOptions } from "react-razorpay";
 const Razorpay = useRazorpay();
 
 const handlePayment = async (params) => {
-  const order = await createOrder(params);
+  const order = await createOrder(params); //  Create order on your backend
 
   const options = {
     key: "YOUR_KEY_ID", // Enter the Key ID generated from the Dashboard
