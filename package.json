@@ -8,7 +8,7 @@
   },
   "author": "Piyush Garg <gargpiyush195@gmail.com>",
   "license": "ISC",
-  "dependencies": {
+  "peerDependencies": {
     "react": "^17.0.2"
   },
   "repository": {
