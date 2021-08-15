@@ -2,7 +2,7 @@
   "name": "react-razorpay",
   "version": "1.0.6",
   "description": "Integrate Razorpay Payment gateway in your react application.",
-  "main": "src/index",
+  "main": "src/index.js",
   "scripts": {
     "build": "tsc -p ."
   },
