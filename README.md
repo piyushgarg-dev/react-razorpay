@@ -8,6 +8,8 @@ import useRazorpay, { RazorpayOptions } from "react-razorpay";
 ```
 
 ```js
+const Razorpay = useRazorpay();
+
 const handlePayment = async (params) => {
   const order = await createOrder(params);
 
