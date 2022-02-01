@@ -6,7 +6,7 @@ Integrate Razorpay Payment gateway in your react application.
 
 ```js
 // Import the package
-import useRazorpay, { RazorpayOptions } from "react-razorpay";
+import useRazorpay from "react-razorpay";
 ```
 
 ```js
@@ -63,7 +63,7 @@ Offical Docs of Razorpay: https://razorpay.com/docs/payment-gateway/web-integrat
 
 ```ts
 import { useCallback } from "react";
-import useRazorpay, { RazorpayOptions } from "react-razorpay";
+import useRazorpay from "react-razorpay";
 
 export default function App() {
   const Razorpay = useRazorpay();
