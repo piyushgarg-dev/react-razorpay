@@ -30,7 +30,7 @@ const handlePayment = async (params) => {
     },
     prefill: {
       name: "Piyush Garg",
-      email: "piyushgarg.dev@gmail.com",
+      email: "youremail@example.com",
       contact: "9999999999",
     },
     notes: {
@@ -84,7 +84,7 @@ export default function App() {
       },
       prefill: {
         name: "Piyush Garg",
-        email: "piyushgarg.dev@gmail.com",
+        email: "youremail@example.com",
         contact: "9999999999",
       },
       notes: {
