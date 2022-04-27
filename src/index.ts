@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useMemo } from "react";
 
 interface RazorpaySuccesshandlerArgs {
   razorpay_signature: string;
@@ -26,7 +26,8 @@ class Razorpay {
 
   constructor(options: RazorpayOptions) {
     this.options = options;
-    this.rzrpayInstannce = new (window as any).Razorpay(this.options);
+    if (typeof window !== "undefined")
+      this.rzrpayInstannce = new (window as any).Razorpay(this.options);
   }
 
   public on(event: string, callback: Function) {
@@ -42,12 +43,15 @@ const useRazorpay = () => {
   /* Constants */
   const RAZORPAY_SCRIPT = "https://checkout.razorpay.com/v1/checkout.js";
 
+  const isClient = useMemo(() => typeof window !== "undefined", []);
+
   const checkScriptLoaded: () => boolean = useCallback(() => {
-    if (!("Razorpay" in window)) return false;
+    if (!isClient || !("Razorpay" in window)) return false;
     return true;
   }, []);
 
   const loadScript = useCallback((scriptUrl: string) => {
+    if (!isClient) return; // Don't execute this function if it's rendering on server side
     return new Promise((resolve, reject) => {
       const scriptTag = document.createElement("script");
       scriptTag.src = scriptUrl;
