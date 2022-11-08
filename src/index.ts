@@ -18,6 +18,21 @@ export interface RazorpayOptions {
   prefill?: {};
   notes?: {};
   theme?: {};
+  modal?: {};
+  subscription_id?: string;
+  subscription_card_change?: boolean;
+  recurring?: boolean;
+  callback_url?: string;
+  redirect?: boolean;
+  customer_id?: string;
+  timeout?: number;
+  remember_customer?: boolean;
+  readonly?: {};
+  hidden?: {};
+  send_sms_hash?: boolean;
+  allow_rotation?: boolean;
+  retry?: {};
+  config?: {};
 }
 
 class Razorpay {
