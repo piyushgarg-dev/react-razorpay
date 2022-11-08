@@ -15,10 +15,26 @@ export interface RazorpayOptions {
   image?: string;
   order_id: string;
   handler?: (args: RazorpaySuccesshandlerArgs) => void;
-  prefill?: {};
+  prefill?: {
+    name?: string;
+    email?: string;
+    contact?: string;
+    method?: "card" | "netbanking" | "wallet" | "emi" | "upi";
+  };
   notes?: {};
-  theme?: {};
-  modal?: {};
+  theme?: {
+    hide_topbar?: boolean;
+    color?: string;
+    backdrop_color?: string;
+  };
+  modal?: {
+    backdropclose?: boolean;
+    escape?: boolean;
+    handleback?: boolean;
+    confirm_close?: boolean;
+    ondismiss?: boolean;
+    animation?: boolean;
+  };
   subscription_id?: string;
   subscription_card_change?: boolean;
   recurring?: boolean;
@@ -27,12 +43,26 @@ export interface RazorpayOptions {
   customer_id?: string;
   timeout?: number;
   remember_customer?: boolean;
-  readonly?: {};
-  hidden?: {};
+  readonly?: {
+    contact?: boolean;
+    email?: boolean;
+    name?: boolean;
+  };
+  hidden?: {
+    contact?: boolean;
+    email?: boolean;
+  };
   send_sms_hash?: boolean;
   allow_rotation?: boolean;
-  retry?: {};
-  config?: {};
+  retry?: {
+    enabled?: boolean;
+    max_count?: boolean;
+  };
+  config?: {
+    display: {
+      language: "en" | "ben" | "hi" | "mar" | "guj" | "tam" | "tel";
+    };
+  };
 }
 
 class Razorpay {
