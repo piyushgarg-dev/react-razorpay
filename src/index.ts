@@ -32,7 +32,7 @@ export interface RazorpayOptions {
     escape?: boolean;
     handleback?: boolean;
     confirm_close?: boolean;
-    ondismiss?: Function;
+    ondismiss?: () => void;
     animation?: boolean;
   };
   subscription_id?: string;
