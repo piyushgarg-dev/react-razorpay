@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useMemo } from "react";
+import { useEffect, useCallback, useMemo, useState } from "react";
 
 interface RazorpaySuccesshandlerArgs {
   razorpay_signature: string;
@@ -90,6 +90,8 @@ const useRazorpay = () => {
 
   const isClient = useMemo(() => typeof window !== "undefined", []);
 
+  const [isLoaded, setIsLoaded] = useState(false);
+
   const checkScriptLoaded: () => boolean = useCallback(() => {
     if (!isClient || !("Razorpay" in window)) return false;
     return true;
@@ -100,7 +102,9 @@ const useRazorpay = () => {
     return new Promise((resolve, reject) => {
       const scriptTag = document.createElement("script");
       scriptTag.src = scriptUrl;
-      scriptTag.onload = (ev) => resolve(ev);
+      scriptTag.onload = (ev) => {
+        setIsLoaded(true), resolve(ev);
+      };
       scriptTag.onerror = (err) => reject(err);
       document.body.appendChild(scriptTag);
     });
@@ -118,7 +122,7 @@ const useRazorpay = () => {
     }
   }, []);
 
-  return Razorpay;
+  return [Razorpay, isLoaded] as [typeof Razorpay, boolean];
 };
 
 export default useRazorpay;
