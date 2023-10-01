@@ -9,12 +9,12 @@ interface RazorpaySuccesshandlerArgs {
 
 export interface RazorpayOptions {
 	key: string;
-	amount: string;
-	currency: string;
-	name: string;
+	amount?: string;
+	currency?: string;
+	name?: string;
 	description?: string;
 	image?: string;
-	order_id: string;
+	order_id?: string;
 	handler?: (args: RazorpaySuccesshandlerArgs) => void;
 	prefill?: {
 		name?: string;
