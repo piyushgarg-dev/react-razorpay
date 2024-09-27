@@ -1,6 +1,6 @@
 {
   "name": "react-razorpay",
-  "version": "1.2.0",
+  "version": "3.0.2",
   "description": "Integrate Razorpay Payment gateway in your react application.",
   "main": "dist/index.js",
   "scripts": {
@@ -13,13 +13,14 @@
   "author": "Piyush Garg <piyushgarg.dev@gmail.com>",
   "license": "ISC",
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/piyushgarg-dev/react-razorpay"
   },
   "devDependencies": {
+    "@types/node": "^22.7.3",
     "@types/react": "^17.0.18",
     "typescript": "^4.3.5"
   },
